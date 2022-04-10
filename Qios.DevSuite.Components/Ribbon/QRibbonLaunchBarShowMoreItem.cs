@@ -13,7 +13,7 @@ namespace Qios.DevSuite.Components.Ribbon
     public QRibbonLaunchBarShowMoreItemConfiguration Configuration
     {
       get => base.Configuration as QRibbonLaunchBarShowMoreItemConfiguration;
-      set => this.Configuration = (QRibbonLaunchBarItemConfiguration) value;
+      set => this.Configuration = value;
     }
 
     public override bool CanExpand => true;

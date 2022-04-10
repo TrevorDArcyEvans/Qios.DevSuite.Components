@@ -59,7 +59,7 @@ namespace Qios.DevSuite.Components
     public QCompositeImageConfiguration Configuration
     {
       get => base.Configuration as QCompositeImageConfiguration;
-      set => this.Configuration = (QContentPartConfiguration) value;
+      set => this.Configuration = value;
     }
 
     public bool ShouldSerializeImage() => this.m_oImageContainer.ShouldSerializeImage();

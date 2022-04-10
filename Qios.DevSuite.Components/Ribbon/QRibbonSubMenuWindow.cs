@@ -75,7 +75,7 @@ namespace Qios.DevSuite.Components.Ribbon
     public QRibbonSubMenuWindow.QRibbonSubMenuWindowCompositeConfiguration CompositeConfiguration
     {
       get => base.CompositeConfiguration as QRibbonSubMenuWindow.QRibbonSubMenuWindowCompositeConfiguration;
-      set => this.CompositeConfiguration = (QCompositeConfiguration) value;
+      set => this.CompositeConfiguration = value;
     }
 
     [QColorSchemeShowColors(QColorSchemeShowColorsMethod.Add, QColorCategory.RibbonMenuWindow)]

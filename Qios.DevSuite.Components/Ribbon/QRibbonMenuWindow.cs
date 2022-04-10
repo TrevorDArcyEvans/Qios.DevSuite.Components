@@ -131,7 +131,7 @@ namespace Qios.DevSuite.Components.Ribbon
     public QRibbonMenuWindow.QRibbonMenuWindowCompositeConfiguration CompositeConfiguration
     {
       get => base.CompositeConfiguration as QRibbonMenuWindow.QRibbonMenuWindowCompositeConfiguration;
-      set => this.CompositeConfiguration = (QCompositeConfiguration) value;
+      set => this.CompositeConfiguration = value;
     }
 
     public QColorSet GetItemColorSet(

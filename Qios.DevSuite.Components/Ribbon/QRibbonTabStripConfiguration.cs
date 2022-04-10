@@ -74,7 +74,7 @@ namespace Qios.DevSuite.Components.Ribbon
     public QRibbonTabStripAppearance Appearance
     {
       get => base.Appearance as QRibbonTabStripAppearance;
-      set => this.Appearance = (QTabStripAppearance) value;
+      set => this.Appearance = value;
     }
 
     [Description("Gets or sets the appearance a navigation button of the TabStrip")]
@@ -94,7 +94,7 @@ namespace Qios.DevSuite.Components.Ribbon
     public QRibbonTabButtonConfiguration ButtonConfiguration
     {
       get => base.ButtonConfiguration as QRibbonTabButtonConfiguration;
-      set => this.ButtonConfiguration = (QTabButtonConfiguration) value;
+      set => this.ButtonConfiguration = value;
     }
 
     [Description("Gets or sets whether the MDI restore button is visible")]

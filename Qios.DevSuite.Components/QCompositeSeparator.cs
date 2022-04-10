@@ -58,7 +58,7 @@ namespace Qios.DevSuite.Components
     public QCompositeSeparatorConfiguration Configuration
     {
       get => base.Configuration as QCompositeSeparatorConfiguration;
-      set => this.Configuration = (QContentPartConfiguration) value;
+      set => this.Configuration = value;
     }
 
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]

@@ -37,7 +37,7 @@ namespace Qios.DevSuite.Components
     public QCompositeButtonConfiguration Configuration
     {
       get => base.Configuration as QCompositeButtonConfiguration;
-      set => this.Configuration = (QCompositeMenuItemConfiguration) value;
+      set => this.Configuration = value;
     }
 
     public override QColorSet GetItemColorSet(

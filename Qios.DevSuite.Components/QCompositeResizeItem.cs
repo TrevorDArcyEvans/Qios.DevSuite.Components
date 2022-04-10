@@ -74,7 +74,7 @@ namespace Qios.DevSuite.Components
     public QCompositeResizeItemConfiguration Configuration
     {
       get => base.Configuration as QCompositeResizeItemConfiguration;
-      set => this.Configuration = (QCompositeItemConfiguration) value;
+      set => this.Configuration = value;
     }
   }
 }

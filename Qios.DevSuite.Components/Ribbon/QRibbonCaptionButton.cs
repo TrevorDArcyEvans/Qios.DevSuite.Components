@@ -19,7 +19,7 @@ namespace Qios.DevSuite.Components.Ribbon
     public QRibbonCaptionButtonConfiguration Configuration
     {
       get => base.Configuration as QRibbonCaptionButtonConfiguration;
-      set => this.Configuration = (QCompositeItemConfiguration) value;
+      set => this.Configuration = value;
     }
 
     public override QColorSet GetItemColorSet(

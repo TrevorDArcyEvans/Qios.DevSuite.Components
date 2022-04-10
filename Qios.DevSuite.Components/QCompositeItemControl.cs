@@ -150,7 +150,7 @@ namespace Qios.DevSuite.Components
     public QCompositeItemControlConfiguration Configuration
     {
       get => base.Configuration as QCompositeItemControlConfiguration;
-      set => this.Configuration = (QContentPartConfiguration) value;
+      set => this.Configuration = value;
     }
 
     protected override IQPartConfigurationBase CreateConfiguration() => (IQPartConfigurationBase) new QCompositeItemControlConfiguration();

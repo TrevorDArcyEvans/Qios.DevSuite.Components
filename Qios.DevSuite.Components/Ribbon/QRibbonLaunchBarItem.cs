@@ -20,7 +20,7 @@ namespace Qios.DevSuite.Components.Ribbon
     public QRibbonLaunchBarItemConfiguration Configuration
     {
       get => base.Configuration as QRibbonLaunchBarItemConfiguration;
-      set => this.Configuration = (QCompositeItemConfiguration) value;
+      set => this.Configuration = value;
     }
 
     [Browsable(false)]

@@ -19,7 +19,7 @@ namespace Qios.DevSuite.Components
     public virtual QComboBoxConfiguration Configuration
     {
       get => base.Configuration as QComboBoxConfiguration;
-      set => this.Configuration = (QInputBoxConfiguration) value;
+      set => this.Configuration = value;
     }
 
     [EditorBrowsable(EditorBrowsableState.Never)]

@@ -240,7 +240,7 @@ namespace Qios.DevSuite.Components
     public QCompositeMenuItemConfiguration Configuration
     {
       get => base.Configuration as QCompositeMenuItemConfiguration;
-      set => this.Configuration = (QCompositeItemConfiguration) value;
+      set => this.Configuration = value;
     }
 
     public override IQItemColorHost ColorHost

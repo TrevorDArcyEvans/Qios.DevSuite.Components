@@ -154,7 +154,7 @@ namespace Qios.DevSuite.Components
     public QCompositeMarkupTextConfiguration Configuration
     {
       get => base.Configuration as QCompositeMarkupTextConfiguration;
-      set => this.Configuration = (QContentPartConfiguration) value;
+      set => this.Configuration = value;
     }
 
     [Localizable(true)]

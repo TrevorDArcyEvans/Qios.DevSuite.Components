@@ -92,7 +92,7 @@ namespace Qios.DevSuite.Components
     public QCompositeLargeMenuItem.QCompositeLargeMenuItemConfiguration Configuration
     {
       get => base.Configuration as QCompositeLargeMenuItem.QCompositeLargeMenuItemConfiguration;
-      set => this.Configuration = (QCompositeMenuItemConfiguration) value;
+      set => this.Configuration = value;
     }
 
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]

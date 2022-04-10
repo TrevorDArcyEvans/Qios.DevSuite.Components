@@ -286,7 +286,7 @@ namespace Qios.DevSuite.Components
     public virtual QBalloonWindowConfiguration Configuration
     {
       get => (QBalloonWindowConfiguration) base.Configuration;
-      set => this.Configuration = (QShapedWindowConfiguration) value;
+      set => this.Configuration = value;
     }
 
     protected override void HandleConfigurationChanged(bool refresh)

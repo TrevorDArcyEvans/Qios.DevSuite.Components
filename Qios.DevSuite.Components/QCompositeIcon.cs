@@ -74,7 +74,7 @@ namespace Qios.DevSuite.Components
     public QCompositeIconConfiguration Configuration
     {
       get => base.Configuration as QCompositeIconConfiguration;
-      set => this.Configuration = (QContentPartConfiguration) value;
+      set => this.Configuration = value;
     }
 
     public bool ShouldSerializeIcon() => this.m_oIconContainer.ShouldSerializeIcon();

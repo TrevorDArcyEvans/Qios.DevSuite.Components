@@ -74,7 +74,7 @@ namespace Qios.DevSuite.Components.Ribbon
     public QRibbonCollapsedItemConfiguration Configuration
     {
       get => base.Configuration as QRibbonCollapsedItemConfiguration;
-      set => this.Configuration = (QCompositeItemConfiguration) value;
+      set => this.Configuration = value;
     }
 
     [Browsable(false)]

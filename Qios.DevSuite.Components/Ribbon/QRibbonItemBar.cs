@@ -25,7 +25,7 @@ namespace Qios.DevSuite.Components.Ribbon
     public QRibbonItemBarConfiguration Configuration
     {
       get => base.Configuration as QRibbonItemBarConfiguration;
-      set => this.Configuration = (QCompositeGroupConfiguration) value;
+      set => this.Configuration = value;
     }
 
     [QColorSchemeShowColors(QColorSchemeShowColorsMethod.Add, QColorCategory.RibbonItem)]

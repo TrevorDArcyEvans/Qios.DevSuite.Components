@@ -120,7 +120,7 @@ namespace Qios.DevSuite.Components
     public QCompositeGroupConfiguration Configuration
     {
       get => base.Configuration as QCompositeGroupConfiguration;
-      set => this.Configuration = (QContentPartConfiguration) value;
+      set => this.Configuration = value;
     }
 
     [Browsable(true)]

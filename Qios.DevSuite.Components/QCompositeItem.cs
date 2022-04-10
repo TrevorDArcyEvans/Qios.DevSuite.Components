@@ -414,7 +414,7 @@ namespace Qios.DevSuite.Components
     public QCompositeItemConfiguration Configuration
     {
       get => base.Configuration as QCompositeItemConfiguration;
-      set => this.Configuration = (QContentPartConfiguration) value;
+      set => this.Configuration = value;
     }
 
     [Browsable(false)]

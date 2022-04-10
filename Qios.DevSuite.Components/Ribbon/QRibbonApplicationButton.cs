@@ -89,7 +89,7 @@ namespace Qios.DevSuite.Components.Ribbon
     public QRibbonApplicationButtonConfiguration Configuration
     {
       get => base.Configuration as QRibbonApplicationButtonConfiguration;
-      set => this.Configuration = (QCompositeItemConfiguration) value;
+      set => this.Configuration = value;
     }
 
     [EditorBrowsable(EditorBrowsableState.Never)]

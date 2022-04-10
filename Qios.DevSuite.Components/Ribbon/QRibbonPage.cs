@@ -267,7 +267,7 @@ namespace Qios.DevSuite.Components.Ribbon
     public QRibbonTabButtonConfiguration ButtonConfiguration
     {
       get => base.ButtonConfiguration as QRibbonTabButtonConfiguration;
-      set => this.ButtonConfiguration = (QTabButtonConfiguration) value;
+      set => this.ButtonConfiguration = value;
     }
 
     [Category("Appearance")]

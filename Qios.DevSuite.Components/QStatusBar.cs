@@ -116,7 +116,7 @@ namespace Qios.DevSuite.Components
     public virtual QStatusBarToolTipConfiguration ToolTipConfiguration
     {
       get => (QStatusBarToolTipConfiguration) base.ToolTipConfiguration;
-      set => this.ToolTipConfiguration = (QToolTipConfiguration) value;
+      set => this.ToolTipConfiguration = value;
     }
 
     [Category("QAppearance")]
