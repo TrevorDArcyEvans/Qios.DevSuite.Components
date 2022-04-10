@@ -57,11 +57,11 @@ namespace Qios.DevSuite.Components
 
     public static QMargin GetDefaultNonClientAreaMargin(
       CreateParams createParams,
-      MainMenu menu)
+      MenuStrip menu)
     {
       Rectangle rectangle = new Rectangle(0, 0, 200, 200);
       NativeMethods.RECT rect = NativeHelper.CreateRECT(rectangle);
-      bool bMenu = menu != null && menu.MenuItems.Count > 0;
+      bool bMenu = menu != null && menu.Items.Count > 0;
       NativeMethods.AdjustWindowRectEx(ref rect, createParams.Style, bMenu, createParams.ExStyle);
       return new QMargin(rectangle.Left - rect.left, rectangle.Top - rect.top, rect.right - rectangle.Right, rect.bottom - rectangle.Bottom);
     }
@@ -70,7 +70,8 @@ namespace Qios.DevSuite.Components
 
     public static IntPtr GetUndisposedHandle(IWin32Window window)
     {
-      if (window is Control control && !control.IsDisposed)
+      var control = window as Control;
+      if (control != null && !control.IsDisposed)
         return control.Handle;
       return control == null && window != null ? window.Handle : IntPtr.Zero;
     }
