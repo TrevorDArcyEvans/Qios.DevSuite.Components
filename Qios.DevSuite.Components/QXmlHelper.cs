@@ -22,9 +22,9 @@ namespace Qios.DevSuite.Components
 
     public static bool ValidateXmlFragment(string fragment, bool throwException)
     {
-      if (QMisc.IsEmpty((object) fragment))
+      if (QMisc.IsEmpty((object)fragment))
         return true;
-      XmlReader xmlReader = (XmlReader) new XmlTextReader((TextReader) new StringReader("<value>" + fragment + "</value>"));
+      XmlReader xmlReader = (XmlReader)new XmlTextReader((TextReader)new StringReader("<value>" + fragment + "</value>"));
       try
       {
         do
@@ -50,7 +50,7 @@ namespace Qios.DevSuite.Components
       PropertyDescriptorCollection propertiesToSet)
     {
       if (destination == null)
-        throw new InvalidOperationException(QResources.GetException("General_ParameterNull", (object) nameof (destination)));
+        throw new InvalidOperationException(QResources.GetException("General_ParameterNull", (object)nameof(destination)));
       if (propertiesToSet == null)
         propertiesToSet = TypeDescriptor.GetProperties(destination);
       for (int index = 0; index < propertiesToSet.Count; ++index)
@@ -66,14 +66,14 @@ namespace Qios.DevSuite.Components
           if (QXmlHelper.ContainsChildElement(element, str))
           {
             object obj = null;
-            obj = QMisc.GetViaTypeConverter((object) QXmlHelper.GetChildElementString(element, str), propertiesTo.PropertyType) ?? Convert.ChangeType(obj, propertiesTo.PropertyType, (IFormatProvider) CultureInfo.InvariantCulture);
+            obj = QMisc.GetViaTypeConverter((object)QXmlHelper.GetChildElementString(element, str), propertiesTo.PropertyType) ?? Convert.ChangeType(obj, propertiesTo.PropertyType, (IFormatProvider)CultureInfo.InvariantCulture);
             try
             {
               propertiesTo.SetValue(destination, obj);
             }
             catch (Exception ex)
             {
-              throw new InvalidOperationException(QResources.GetException("QXmlHelper_InitializeObjectFromXmlSetThrewException", (object) destination.GetType().Name, (object) propertiesTo.Name, obj), ex);
+              throw new InvalidOperationException(QResources.GetException("QXmlHelper_InitializeObjectFromXmlSetThrewException", (object)destination.GetType().Name, (object)propertiesTo.Name, obj), ex);
             }
           }
         }
@@ -109,15 +109,16 @@ namespace Qios.DevSuite.Components
     {
       switch (parentElement)
       {
-        case XmlElement documentElement:
-label_3:
+        case XmlElement:
+        label_3:
+          var documentElement = (XmlElement)parentElement;
           string asString = QMisc.GetAsString(value);
           if (asString == null && asString.Length == 0)
-            return (IXPathNavigable) null;
+            return (IXPathNavigable)null;
           XmlAttribute attribute = documentElement.OwnerDocument.CreateAttribute(name);
           attribute.Value = asString;
           documentElement.Attributes.Append(attribute);
-          return (IXPathNavigable) attribute;
+          return (IXPathNavigable)attribute;
         case XmlDocument xmlDocument:
           documentElement = xmlDocument.DocumentElement;
           goto label_3;
@@ -136,14 +137,14 @@ label_3:
       if (xmlDocument != null)
       {
         element = xmlDocument.CreateElement(name);
-        xmlDocument.AppendChild((XmlNode) element);
+        xmlDocument.AppendChild((XmlNode)element);
       }
       else
       {
         element = xmlElement.OwnerDocument.CreateElement(name);
-        xmlElement.AppendChild((XmlNode) element);
+        xmlElement.AppendChild((XmlNode)element);
       }
-      return (IXPathNavigable) element;
+      return (IXPathNavigable)element;
     }
 
     public static IXPathNavigable AddElement(
@@ -154,7 +155,7 @@ label_3:
       var xmlElement = QXmlHelper.AddElement(parentNode, name) as XmlElement;
       if (xmlElement != null && innerValue != null)
         xmlElement.InnerText = QMisc.GetAsString(innerValue);
-      return (IXPathNavigable) xmlElement;
+      return (IXPathNavigable)xmlElement;
     }
 
     public static void RemoveAll(IXPathNavigable element)
@@ -169,37 +170,37 @@ label_3:
       string name,
       string defaultValue)
     {
-      string str = parentElement != null ? parentElement.CreateNavigator().GetAttribute(name, "") : throw new InvalidOperationException(QResources.GetException("General_ParameterNull", (object) nameof (parentElement)));
-      return QMisc.IsEmpty((object) str) ? defaultValue : str;
+      string str = parentElement != null ? parentElement.CreateNavigator().GetAttribute(name, "") : throw new InvalidOperationException(QResources.GetException("General_ParameterNull", (object)nameof(parentElement)));
+      return QMisc.IsEmpty((object)str) ? defaultValue : str;
     }
 
     public static string GetAttributeString(IXPathNavigable parentElement, string name) => QXmlHelper.GetAttributeString(parentElement, name, string.Empty);
 
-    public static Guid GetAttributeGuid(IXPathNavigable parentElement, string name) => QMisc.GetAsGuid((object) QXmlHelper.GetAttributeString(parentElement, name));
+    public static Guid GetAttributeGuid(IXPathNavigable parentElement, string name) => QMisc.GetAsGuid((object)QXmlHelper.GetAttributeString(parentElement, name));
 
     public static Guid GetAttributeGuid(
       IXPathNavigable parentElement,
       string name,
       Guid defaultValue)
     {
-      return QMisc.GetAsGuid((object) QXmlHelper.GetAttributeString(parentElement, name), defaultValue);
+      return QMisc.GetAsGuid((object)QXmlHelper.GetAttributeString(parentElement, name), defaultValue);
     }
 
-    public static bool GetAttributeBool(IXPathNavigable parentElement, string name) => QMisc.GetAsBool((object) QXmlHelper.GetAttributeString(parentElement, name));
+    public static bool GetAttributeBool(IXPathNavigable parentElement, string name) => QMisc.GetAsBool((object)QXmlHelper.GetAttributeString(parentElement, name));
 
     public static bool GetAttributeBool(
       IXPathNavigable parentElement,
       string name,
       bool defaultValue)
     {
-      return QMisc.GetAsBool((object) QXmlHelper.GetAttributeString(parentElement, name), defaultValue);
+      return QMisc.GetAsBool((object)QXmlHelper.GetAttributeString(parentElement, name), defaultValue);
     }
 
     public static Type GetAttributeType(IXPathNavigable parentElement, string name) => Type.GetType(QXmlHelper.GetAttributeString(parentElement, name), false, true);
 
-    public static int GetAttributeInt(IXPathNavigable parentElement, string name) => QMisc.GetAsInt((object) QXmlHelper.GetAttributeString(parentElement, name));
+    public static int GetAttributeInt(IXPathNavigable parentElement, string name) => QMisc.GetAsInt((object)QXmlHelper.GetAttributeString(parentElement, name));
 
-    public static int GetAttributeInt(IXPathNavigable parentElement, string name, int defaultValue) => QMisc.GetAsInt((object) QXmlHelper.GetAttributeString(parentElement, name), defaultValue);
+    public static int GetAttributeInt(IXPathNavigable parentElement, string name, int defaultValue) => QMisc.GetAsInt((object)QXmlHelper.GetAttributeString(parentElement, name), defaultValue);
 
     public static Enum GetAttributeEnum(
       IXPathNavigable parentElement,
@@ -210,7 +211,7 @@ label_3:
       string attributeString = QXmlHelper.GetAttributeString(parentElement, name);
       try
       {
-        return (Enum) Enum.Parse(enumType, attributeString, true);
+        return (Enum)Enum.Parse(enumType, attributeString, true);
       }
       catch (ArgumentException ex)
       {
@@ -223,15 +224,15 @@ label_3:
       string name,
       Type enumType)
     {
-      return QXmlHelper.GetAttributeEnum(parentElement, name, enumType, (Enum) null);
+      return QXmlHelper.GetAttributeEnum(parentElement, name, enumType, (Enum)null);
     }
 
     public static XPathNavigator SelectChildNavigator(
       IXPathNavigable parentElement,
       string xpath)
     {
-      XPathNodeIterator xpathNodeIterator = parentElement != null ? parentElement.CreateNavigator().Select(xpath) : throw new InvalidOperationException(QResources.GetException("General_ParameterNull", (object) nameof (parentElement)));
-      return xpathNodeIterator.MoveNext() ? xpathNodeIterator.Current : (XPathNavigator) null;
+      XPathNodeIterator xpathNodeIterator = parentElement != null ? parentElement.CreateNavigator().Select(xpath) : throw new InvalidOperationException(QResources.GetException("General_ParameterNull", (object)nameof(parentElement)));
+      return xpathNodeIterator.MoveNext() ? xpathNodeIterator.Current : (XPathNavigator)null;
     }
 
     public static IXPathNavigable SelectChildNavigable(
@@ -239,10 +240,10 @@ label_3:
       string xpath)
     {
       XPathNavigator navigator = QXmlHelper.SelectChildNavigator(parentElement, xpath);
-      return navigator != null ? QXmlHelper.GetNavigableFromNavigator(navigator) : (IXPathNavigable) null;
+      return navigator != null ? QXmlHelper.GetNavigableFromNavigator(navigator) : (IXPathNavigable)null;
     }
 
-    public static IXPathNavigable GetNavigableFromNavigator(XPathNavigator navigator) => navigator is IHasXmlNode hasXmlNode ? (IXPathNavigable) hasXmlNode.GetNode() : (IXPathNavigable) null;
+    public static IXPathNavigable GetNavigableFromNavigator(XPathNavigator navigator) => navigator is IHasXmlNode hasXmlNode ? (IXPathNavigable)hasXmlNode.GetNode() : (IXPathNavigable)null;
 
     public static bool ContainsChildElement(IXPathNavigable parentElement, string childName) => QXmlHelper.SelectChildNavigator(parentElement, childName) != null;
 
@@ -259,47 +260,47 @@ label_3:
 
     public static string GetChildElementString(IXPathNavigable element, string name) => QXmlHelper.GetChildElementString(element, name, string.Empty);
 
-    public static Guid GetChildElementGuid(IXPathNavigable element, string name) => QMisc.GetAsGuid((object) QXmlHelper.GetChildElementString(element, name));
+    public static Guid GetChildElementGuid(IXPathNavigable element, string name) => QMisc.GetAsGuid((object)QXmlHelper.GetChildElementString(element, name));
 
     public static Guid GetChildElementGuid(
       IXPathNavigable element,
       string name,
       Guid defaultValue)
     {
-      return QMisc.GetAsGuid((object) QXmlHelper.GetChildElementString(element, name), defaultValue);
+      return QMisc.GetAsGuid((object)QXmlHelper.GetChildElementString(element, name), defaultValue);
     }
 
-    public static bool GetChildElementBool(IXPathNavigable element, string name) => QMisc.GetAsBool((object) QXmlHelper.GetChildElementString(element, name));
+    public static bool GetChildElementBool(IXPathNavigable element, string name) => QMisc.GetAsBool((object)QXmlHelper.GetChildElementString(element, name));
 
-    public static bool GetChildElementBool(IXPathNavigable element, string name, bool defaultValue) => QMisc.GetAsBool((object) QXmlHelper.GetChildElementString(element, name), defaultValue);
+    public static bool GetChildElementBool(IXPathNavigable element, string name, bool defaultValue) => QMisc.GetAsBool((object)QXmlHelper.GetChildElementString(element, name), defaultValue);
 
     public static Type GetChildElementType(IXPathNavigable element, string name) => Type.GetType(QXmlHelper.GetChildElementString(element, name), false, true);
 
-    public static int GetChildElementInt(IXPathNavigable element, string name) => QMisc.GetAsInt((object) QXmlHelper.GetChildElementString(element, name));
+    public static int GetChildElementInt(IXPathNavigable element, string name) => QMisc.GetAsInt((object)QXmlHelper.GetChildElementString(element, name));
 
-    public static int GetChildElementInt(IXPathNavigable element, string name, int defaultValue) => QMisc.GetAsInt((object) QXmlHelper.GetChildElementString(element, name), defaultValue);
+    public static int GetChildElementInt(IXPathNavigable element, string name, int defaultValue) => QMisc.GetAsInt((object)QXmlHelper.GetChildElementString(element, name), defaultValue);
 
-    public static Size GetChildElementSize(IXPathNavigable element, string name) => QMisc.GetAsSize((object) QXmlHelper.GetChildElementString(element, name));
+    public static Size GetChildElementSize(IXPathNavigable element, string name) => QMisc.GetAsSize((object)QXmlHelper.GetChildElementString(element, name));
 
     public static Size GetChildElementSize(
       IXPathNavigable element,
       string name,
       Size defaultValue)
     {
-      return QMisc.GetAsSize((object) QXmlHelper.GetChildElementString(element, name), defaultValue);
+      return QMisc.GetAsSize((object)QXmlHelper.GetChildElementString(element, name), defaultValue);
     }
 
-    public static Rectangle GetChildElementRectangle(IXPathNavigable element, string name) => QMisc.GetAsRectangle((object) QXmlHelper.GetChildElementString(element, name));
+    public static Rectangle GetChildElementRectangle(IXPathNavigable element, string name) => QMisc.GetAsRectangle((object)QXmlHelper.GetChildElementString(element, name));
 
     public static Rectangle GetChildElementRectangle(
       IXPathNavigable element,
       string name,
       Rectangle defaultValue)
     {
-      return QMisc.GetAsRectangle((object) QXmlHelper.GetChildElementString(element, name), defaultValue);
+      return QMisc.GetAsRectangle((object)QXmlHelper.GetChildElementString(element, name), defaultValue);
     }
 
-    public static Enum GetChildElementEnum(IXPathNavigable element, string name, Type enumType) => QXmlHelper.GetChildElementEnum(element, name, enumType, (Enum) null);
+    public static Enum GetChildElementEnum(IXPathNavigable element, string name, Type enumType) => QXmlHelper.GetChildElementEnum(element, name, enumType, (Enum)null);
 
     public static Enum GetChildElementEnum(
       IXPathNavigable element,
@@ -310,7 +311,7 @@ label_3:
       string childElementString = QXmlHelper.GetChildElementString(element, name);
       try
       {
-        return (Enum) Enum.Parse(enumType, childElementString, true);
+        return (Enum)Enum.Parse(enumType, childElementString, true);
       }
       catch (ArgumentException ex)
       {
