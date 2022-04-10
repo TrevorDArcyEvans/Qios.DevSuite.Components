@@ -38,28 +38,28 @@ namespace Qios.DevSuite.Components.Design
     private Rectangle m_oSelectionBounds = Rectangle.Empty;
     private Point m_oOrigin = Point.Empty;
     private ContextMenuStrip cmShapeMenu;
-    private MenuItem miZoomIn;
-    private MenuItem miZoomOut;
-    private MenuItem miFitShape;
-    private MenuItem miShowShape;
-    private MenuItem miShowShapeItemNumber;
-    private MenuItem miConvertToLine;
-    private MenuItem miConvertToBezier;
-    private MenuItem miAddPoint;
-    private MenuItem miRemovePoint;
-    private MenuItem miAnchor;
-    private MenuItem miAnchorTopLeft;
-    private MenuItem miAnchorTopRight;
-    private MenuItem miAnchorBottomLeft;
-    private MenuItem miAnchorBottomRight;
-    private MenuItem miMirror;
-    private MenuItem miMirrorLeftToRight;
-    private MenuItem miMirrorRightToLeft;
-    private MenuItem miMirrorTopToBottom;
-    private MenuItem miMirrorBottomToTop;
-    private MenuItem miFlipHorizontal;
-    private MenuItem miFlipVertical;
-    private MenuItem miLineVisible;
+    private ToolStripMenuItem miZoomIn;
+    private ToolStripMenuItem miZoomOut;
+    private ToolStripMenuItem miFitShape;
+    private ToolStripMenuItem miShowShape;
+    private ToolStripMenuItem miShowShapeItemNumber;
+    private ToolStripMenuItem miConvertToLine;
+    private ToolStripMenuItem miConvertToBezier;
+    private ToolStripMenuItem miAddPoint;
+    private ToolStripMenuItem miRemovePoint;
+    private ToolStripDropDownMenu miAnchor;
+    private ToolStripMenuItem miAnchorTopLeft;
+    private ToolStripMenuItem miAnchorTopRight;
+    private ToolStripMenuItem miAnchorBottomLeft;
+    private ToolStripMenuItem miAnchorBottomRight;
+    private ToolStripDropDownMenu miMirror;
+    private ToolStripMenuItem miMirrorLeftToRight;
+    private ToolStripMenuItem miMirrorRightToLeft;
+    private ToolStripMenuItem miMirrorTopToBottom;
+    private ToolStripMenuItem miMirrorBottomToTop;
+    private ToolStripMenuItem miFlipHorizontal;
+    private ToolStripMenuItem miFlipVertical;
+    private ToolStripMenuItem miLineVisible;
     private bool m_bWeakEventHandlers = true;
     private QWeakDelegate m_oActiveItemChangedDelegate;
     private QWeakDelegate m_oSelectedItemsChangedDelegate;
@@ -67,67 +67,69 @@ namespace Qios.DevSuite.Components.Design
     public QShapePainterControl()
     {
       this.SetStyle(ControlStyles.UserPaint | ControlStyles.Opaque | ControlStyles.ResizeRedraw | ControlStyles.AllPaintingInWmPaint | ControlStyles.DoubleBuffer, true);
-      this.m_oScrollBarExtension = new QScrollBarExtension((Control) this, QScrollBarVisibility.Both);
+      this.m_oScrollBarExtension = new QScrollBarExtension((Control)this, QScrollBarVisibility.Both);
       this.m_oScrollBarExtension.Scroll += new QScrollEventHandler(this.ScrollBarExtension_Scroll);
-      this.miZoomIn = new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_ZoomIn"), new EventHandler(this.ShapeMenu_Click));
-      this.miZoomOut = new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_ZoomOut"), new EventHandler(this.ShapeMenu_Click));
-      this.miFitShape = new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_FitShape"), new EventHandler(this.ShapeMenu_Click));
-      this.miShowShape = new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_ShowShape"), new EventHandler(this.ShapeMenu_Click));
-      this.miShowShapeItemNumber = new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_ShowShapeItemNumber"), new EventHandler(this.ShapeMenu_Click));
-      this.miConvertToLine = new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_ConvertToLine"), new EventHandler(this.ShapeMenu_Click));
-      this.miConvertToBezier = new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_ConvertToBezier"), new EventHandler(this.ShapeMenu_Click));
-      this.miAddPoint = new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_AddPoint"), new EventHandler(this.ShapeMenu_Click));
-      this.miRemovePoint = new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_RemovePoint"), new EventHandler(this.ShapeMenu_Click));
-      this.miAnchorTopLeft = new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_AnchorTopLeft"), new EventHandler(this.ShapeMenu_Click));
-      this.miAnchorTopRight = new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_AnchorTopRight"), new EventHandler(this.ShapeMenu_Click));
-      this.miAnchorBottomLeft = new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_AnchorBottomLeft"), new EventHandler(this.ShapeMenu_Click));
-      this.miAnchorBottomRight = new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_AnchorBottomRight"), new EventHandler(this.ShapeMenu_Click));
-      this.miAnchor = new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_Anchor"), new EventHandler(this.ShapeMenu_Click));
-      this.miAnchor.MenuItems.AddRange(new MenuItem[4]
+      this.miZoomIn = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_ZoomIn"), null, new EventHandler(this.ShapeMenu_Click));
+      this.miZoomOut = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_ZoomOut"), null, new EventHandler(this.ShapeMenu_Click));
+      this.miFitShape = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_FitShape"), null, new EventHandler(this.ShapeMenu_Click));
+      this.miShowShape = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_ShowShape"), null, new EventHandler(this.ShapeMenu_Click));
+      this.miShowShapeItemNumber = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_ShowShapeItemNumber"), null, new EventHandler(this.ShapeMenu_Click));
+      this.miConvertToLine = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_ConvertToLine"), null, new EventHandler(this.ShapeMenu_Click));
+      this.miConvertToBezier = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_ConvertToBezier"), null, new EventHandler(this.ShapeMenu_Click));
+      this.miAddPoint = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_AddPoint"), null, new EventHandler(this.ShapeMenu_Click));
+      this.miRemovePoint = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_RemovePoint"), null, new EventHandler(this.ShapeMenu_Click));
+      this.miAnchorTopLeft = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_AnchorTopLeft"), null, new EventHandler(this.ShapeMenu_Click));
+      this.miAnchorTopRight = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_AnchorTopRight"), null, new EventHandler(this.ShapeMenu_Click));
+      this.miAnchorBottomLeft = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_AnchorBottomLeft"), null, new EventHandler(this.ShapeMenu_Click));
+      this.miAnchorBottomRight = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_AnchorBottomRight"), null, new EventHandler(this.ShapeMenu_Click));
+      this.miAnchor = new ToolStripDropDownMenu(/*QResources.GetGeneral("QShapePainterControl_ShapeMenu_Anchor")*/);
+      this.miAnchor.Click += this.ShapeMenu_Click;
+      this.miAnchor.Items.AddRange(new ToolStripMenuItem[4]
       {
         this.miAnchorTopLeft,
         this.miAnchorTopRight,
         this.miAnchorBottomLeft,
         this.miAnchorBottomRight
       });
-      this.miMirrorLeftToRight = new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_MirrorLeftToRight"), new EventHandler(this.ShapeMenu_Click));
-      this.miMirrorRightToLeft = new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_MirrorRightToLeft"), new EventHandler(this.ShapeMenu_Click));
-      this.miMirrorTopToBottom = new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_MirrorTopToBottom"), new EventHandler(this.ShapeMenu_Click));
-      this.miMirrorBottomToTop = new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_MirrorBottomToTop"), new EventHandler(this.ShapeMenu_Click));
-      this.miFlipHorizontal = new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_FlipHorizontal"), new EventHandler(this.ShapeMenu_Click));
-      this.miFlipVertical = new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_FlipVertical"), new EventHandler(this.ShapeMenu_Click));
-      this.miMirror = new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_Mirror"), new EventHandler(this.ShapeMenu_Click));
-      this.miMirror.MenuItems.AddRange(new MenuItem[4]
+      this.miMirrorLeftToRight = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_MirrorLeftToRight"), null, new EventHandler(this.ShapeMenu_Click));
+      this.miMirrorRightToLeft = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_MirrorRightToLeft"), null, new EventHandler(this.ShapeMenu_Click));
+      this.miMirrorTopToBottom = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_MirrorTopToBottom"), null, new EventHandler(this.ShapeMenu_Click));
+      this.miMirrorBottomToTop = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_MirrorBottomToTop"), null, new EventHandler(this.ShapeMenu_Click));
+      this.miFlipHorizontal = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_FlipHorizontal"), null, new EventHandler(this.ShapeMenu_Click));
+      this.miFlipVertical = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_FlipVertical"), null, new EventHandler(this.ShapeMenu_Click));
+      this.miMirror = new ToolStripDropDownMenu( /*QResources.GetGeneral("QShapePainterControl_ShapeMenu_Mirror")*/);
+      this.miMirror.Click += this.ShapeMenu_Click;
+      this.miMirror.Items.AddRange(new ToolStripMenuItem[4]
       {
         this.miMirrorLeftToRight,
         this.miMirrorRightToLeft,
         this.miMirrorTopToBottom,
         this.miMirrorBottomToTop
       });
-      this.miLineVisible = new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_LineVisible"), new EventHandler(this.ShapeMenu_Click));
+      this.miLineVisible = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_LineVisible"), null, new EventHandler(this.ShapeMenu_Click));
       this.cmShapeMenu = new ContextMenuStrip();
-      this.cmShapeMenu.Items.AddRange(new MenuItem[21]
+      this.cmShapeMenu.Items.AddRange(new ToolStripMenuItem[]
       {
         this.miZoomIn,
         this.miZoomOut,
         this.miFitShape,
         this.miShowShape,
-        new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_Separator")),
+        new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_Separator")),
         this.miShowShapeItemNumber,
-        new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_Separator")),
+        new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_Separator")),
         this.miConvertToLine,
         this.miConvertToBezier,
-        new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_Separator")),
+        new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_Separator")),
         this.miAddPoint,
         this.miRemovePoint,
-        new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_Separator")),
-        this.miAnchor,
-        new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_Separator")),
-        this.miMirror,
-        new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_Separator")),
+        new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_Separator")),
+        // TODO   this.miAnchor,
+        new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_Separator")),
+        // TODO   this.miMirror,
+        new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_Separator")),
         this.miFlipHorizontal,
         this.miFlipVertical,
-        new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_Separator")),
+        new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_Separator")),
         this.miLineVisible
       });
     }
@@ -135,15 +137,15 @@ namespace Qios.DevSuite.Components.Design
     [QWeakEvent]
     public event EventHandler ActiveItemChanged
     {
-      add => this.m_oActiveItemChangedDelegate = QWeakDelegate.Combine(this.m_oActiveItemChangedDelegate, (Delegate) value, this.m_bWeakEventHandlers);
-      remove => this.m_oActiveItemChangedDelegate = QWeakDelegate.Remove(this.m_oActiveItemChangedDelegate, (Delegate) value);
+      add => this.m_oActiveItemChangedDelegate = QWeakDelegate.Combine(this.m_oActiveItemChangedDelegate, (Delegate)value, this.m_bWeakEventHandlers);
+      remove => this.m_oActiveItemChangedDelegate = QWeakDelegate.Remove(this.m_oActiveItemChangedDelegate, (Delegate)value);
     }
 
     [QWeakEvent]
     public event EventHandler SelectedItemsChanged
     {
-      add => this.m_oSelectedItemsChangedDelegate = QWeakDelegate.Combine(this.m_oSelectedItemsChangedDelegate, (Delegate) value, this.m_bWeakEventHandlers);
-      remove => this.m_oSelectedItemsChangedDelegate = QWeakDelegate.Remove(this.m_oSelectedItemsChangedDelegate, (Delegate) value);
+      add => this.m_oSelectedItemsChangedDelegate = QWeakDelegate.Combine(this.m_oSelectedItemsChangedDelegate, (Delegate)value, this.m_bWeakEventHandlers);
+      remove => this.m_oSelectedItemsChangedDelegate = QWeakDelegate.Remove(this.m_oSelectedItemsChangedDelegate, (Delegate)value);
     }
 
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -166,7 +168,7 @@ namespace Qios.DevSuite.Components.Design
       get => this.m_fZoom;
       set
       {
-        if (object.Equals((object) this.m_fZoom, (object) value))
+        if (object.Equals((object)this.m_fZoom, (object)value))
           return;
         this.m_fZoom = value;
         this.HandleLayoutPropertyChanged();
@@ -189,7 +191,7 @@ namespace Qios.DevSuite.Components.Design
 
     public void ZoomToPoint(float zoom, Point point)
     {
-      if ((double) zoom < 0.0 || object.Equals((object) this.m_fZoom, (object) zoom))
+      if ((double)zoom < 0.0 || object.Equals((object)this.m_fZoom, (object)zoom))
         return;
       this.m_fZoom = zoom;
       this.HandleLayoutPropertyChanged();
@@ -227,7 +229,7 @@ namespace Qios.DevSuite.Components.Design
         if (this.m_oShape != null)
           this.m_oShape.ShapeChanged -= new EventHandler(this.Shape_ShapeChanged);
         this.m_oShape = value;
-        this.m_oShapeDesigner = (QShapeDesigner) null;
+        this.m_oShapeDesigner = (QShapeDesigner)null;
         if (this.m_oShape != null)
         {
           this.m_oShapeDesigner = this.m_oShape.RetrieveActiveDesigner();
@@ -240,11 +242,11 @@ namespace Qios.DevSuite.Components.Design
       }
     }
 
-    public float CalculateZoomForFit() => this.m_oShape != null ? Math.Min((float) this.ClientSize.Width / (float) (this.m_oShape.Size.Width + this.m_oShapeMargin.Horizontal), (float) this.ClientSize.Height / (float) (this.m_oShape.Size.Height + this.m_oShapeMargin.Vertical)) : 1f;
+    public float CalculateZoomForFit() => this.m_oShape != null ? Math.Min((float)this.ClientSize.Width / (float)(this.m_oShape.Size.Width + this.m_oShapeMargin.Horizontal), (float)this.ClientSize.Height / (float)(this.m_oShape.Size.Height + this.m_oShapeMargin.Vertical)) : 1f;
 
     internal void HandleShapePropertyChanged() => this.Invalidate();
 
-    public PointF TranslatePixel(Point pixel) => this.m_oShape.TranslatePoint((PointF) pixel, new Rectangle(this.m_oOrigin.X + this.m_oZoomedShapeMargin.Left, this.m_oOrigin.Y + this.m_oZoomedShapeMargin.Top, this.m_oZoomedShapeSize.Width, this.m_oZoomedShapeSize.Height), new Rectangle(Point.Empty, this.m_oShape.Size), AnchorStyles.None, true);
+    public PointF TranslatePixel(Point pixel) => this.m_oShape.TranslatePoint((PointF)pixel, new Rectangle(this.m_oOrigin.X + this.m_oZoomedShapeMargin.Left, this.m_oOrigin.Y + this.m_oZoomedShapeMargin.Top, this.m_oZoomedShapeSize.Width, this.m_oZoomedShapeSize.Height), new Rectangle(Point.Empty, this.m_oShape.Size), AnchorStyles.None, true);
 
     public RectangleF TranslatePixelRectangle(Rectangle rectangle)
     {
@@ -259,9 +261,9 @@ namespace Qios.DevSuite.Components.Design
       QShapeItemParts parts)
     {
       if (this.m_oShape == null)
-        return (QShapeItem) null;
+        return (QShapeItem)null;
       QShapeItem[] itemsOnPoint = this.m_oShape.Items.GetItemsOnPoint(this.TranslatePixel(pixel), margin, parts);
-      return itemsOnPoint != null && itemsOnPoint.Length > 0 ? itemsOnPoint[0] : (QShapeItem) null;
+      return itemsOnPoint != null && itemsOnPoint.Length > 0 ? itemsOnPoint[0] : (QShapeItem)null;
     }
 
     public QShapeItemParts GetShapeItemParts(
@@ -272,7 +274,7 @@ namespace Qios.DevSuite.Components.Design
       bool returnOnFirstHit)
     {
       if (item == null)
-        throw new InvalidOperationException(QResources.GetException("General_ParameterNull", (object) nameof (item)));
+        throw new InvalidOperationException(QResources.GetException("General_ParameterNull", (object)nameof(item)));
       PointF point = this.TranslatePixel(pixel);
       return item.GetItemPartsOnPoint(point, this.DestinationBounds, margin, partsToCheck, returnOnFirstHit);
     }
@@ -312,17 +314,17 @@ namespace Qios.DevSuite.Components.Design
 
     public void SelectFirstItemAtPixel(Point pixel, bool append, bool resetAllOnNoItem)
     {
-      QShapeItem shapeItemOnPixel = this.GetFirstShapeItemOnPixel(pixel, (float) this.m_iSelectMargin, QShapeItemParts.AllPoints);
+      QShapeItem shapeItemOnPixel = this.GetFirstShapeItemOnPixel(pixel, (float)this.m_iSelectMargin, QShapeItemParts.AllPoints);
       QShapeItemParts parts = QShapeItemParts.None;
       if (shapeItemOnPixel != null)
       {
-        parts = this.GetShapeItemParts(shapeItemOnPixel, pixel, (float) this.m_iSelectMargin, QShapeItemParts.AllPoints, true);
+        parts = this.GetShapeItemParts(shapeItemOnPixel, pixel, (float)this.m_iSelectMargin, QShapeItemParts.AllPoints, true);
       }
       else
       {
-        shapeItemOnPixel = this.GetFirstShapeItemOnPixel(pixel, (float) this.m_iSelectMargin, QShapeItemParts.Line);
+        shapeItemOnPixel = this.GetFirstShapeItemOnPixel(pixel, (float)this.m_iSelectMargin, QShapeItemParts.Line);
         if (shapeItemOnPixel != null)
-          parts = this.GetShapeItemParts(shapeItemOnPixel, pixel, (float) this.m_iSelectMargin, QShapeItemParts.Line, true);
+          parts = this.GetShapeItemParts(shapeItemOnPixel, pixel, (float)this.m_iSelectMargin, QShapeItemParts.Line, true);
       }
       this.m_oActiveItem = shapeItemOnPixel;
       this.m_eActiveItemPart = parts;
@@ -355,7 +357,7 @@ namespace Qios.DevSuite.Components.Design
       this.OnSelectedItemsChanged(EventArgs.Empty);
     }
 
-    private QRectangleSide GetContentsSizingSide(Point coordinate) => this.m_oShape == null ? QRectangleSide.None : this.GetRectangleSizingSide(this.m_oShape.TranslateRectangle((RectangleF) this.m_oShape.ContentBounds, this.DestinationBounds, AnchorStyles.None, true), coordinate);
+    private QRectangleSide GetContentsSizingSide(Point coordinate) => this.m_oShape == null ? QRectangleSide.None : this.GetRectangleSizingSide(this.m_oShape.TranslateRectangle((RectangleF)this.m_oShape.ContentBounds, this.DestinationBounds, AnchorStyles.None, true), coordinate);
 
     private void SetContentsSizingCursor(QRectangleSide side)
     {
@@ -397,14 +399,14 @@ namespace Qios.DevSuite.Components.Design
       RectangleF rectangleF6 = new RectangleF(rectangle.Right - 5f, rectangle.Y - 5f, 10f, 10f);
       RectangleF rectangleF7 = new RectangleF(rectangle.X - 5f, rectangle.Bottom - 5f, 10f, 10f);
       RectangleF rectangleF8 = new RectangleF(rectangle.Right - 5f, rectangle.Bottom - 5f, 10f, 10f);
-      if (rectangleF1.IntersectsWith((RectangleF) rect))
-        rectangleSizingSide = !rectangleF5.IntersectsWith((RectangleF) rect) ? (!rectangleF6.IntersectsWith((RectangleF) rect) ? QRectangleSide.North : QRectangleSide.NorthEast) : QRectangleSide.NorthWest;
-      else if (rectangleF2.IntersectsWith((RectangleF) rect))
-        rectangleSizingSide = !rectangleF7.IntersectsWith((RectangleF) rect) ? (!rectangleF8.IntersectsWith((RectangleF) rect) ? QRectangleSide.South : QRectangleSide.SouthEast) : QRectangleSide.SouthWest;
-      else if (rectangleF3.IntersectsWith((RectangleF) rect))
-        rectangleSizingSide = !rectangleF7.IntersectsWith((RectangleF) rect) ? (!rectangleF5.IntersectsWith((RectangleF) rect) ? QRectangleSide.West : QRectangleSide.NorthWest) : QRectangleSide.SouthWest;
-      else if (rectangleF4.IntersectsWith((RectangleF) rect))
-        rectangleSizingSide = !rectangleF8.IntersectsWith((RectangleF) rect) ? (!rectangleF6.IntersectsWith((RectangleF) rect) ? QRectangleSide.East : QRectangleSide.NorthEast) : QRectangleSide.SouthEast;
+      if (rectangleF1.IntersectsWith((RectangleF)rect))
+        rectangleSizingSide = !rectangleF5.IntersectsWith((RectangleF)rect) ? (!rectangleF6.IntersectsWith((RectangleF)rect) ? QRectangleSide.North : QRectangleSide.NorthEast) : QRectangleSide.NorthWest;
+      else if (rectangleF2.IntersectsWith((RectangleF)rect))
+        rectangleSizingSide = !rectangleF7.IntersectsWith((RectangleF)rect) ? (!rectangleF8.IntersectsWith((RectangleF)rect) ? QRectangleSide.South : QRectangleSide.SouthEast) : QRectangleSide.SouthWest;
+      else if (rectangleF3.IntersectsWith((RectangleF)rect))
+        rectangleSizingSide = !rectangleF7.IntersectsWith((RectangleF)rect) ? (!rectangleF5.IntersectsWith((RectangleF)rect) ? QRectangleSide.West : QRectangleSide.NorthWest) : QRectangleSide.SouthWest;
+      else if (rectangleF4.IntersectsWith((RectangleF)rect))
+        rectangleSizingSide = !rectangleF8.IntersectsWith((RectangleF)rect) ? (!rectangleF6.IntersectsWith((RectangleF)rect) ? QRectangleSide.East : QRectangleSide.NorthEast) : QRectangleSide.SouthEast;
       return rectangleSizingSide;
     }
 
@@ -426,8 +428,8 @@ namespace Qios.DevSuite.Components.Design
       }
       this.miLineVisible.Enabled = flag1 || flag2;
       this.miLineVisible.Checked = this.miLineVisible.Enabled && this.m_oActiveItem.LineVisible;
-      this.miZoomOut.Enabled = (double) this.Zoom - (double) this.ZoomStep > 0.0;
-      this.cmShapeMenu.Show((Control) this, point);
+      this.miZoomOut.Enabled = (double)this.Zoom - (double)this.ZoomStep > 0.0;
+      this.cmShapeMenu.Show((Control)this, point);
     }
 
     private void ConvertActiveItemToLine()
@@ -448,7 +450,7 @@ namespace Qios.DevSuite.Components.Design
     {
       if (this.m_oActiveItem == null || (this.m_oActiveItem.SelectionParts & QShapeItemParts.Line) != QShapeItemParts.Line)
         return;
-      AnchorStyles anchor = (AnchorStyles) (0 | ((double) this.m_oActiveItem.LastCalculatedLineIntersection.X < (double) (this.m_oShape.Size.Width / 2) ? 4 : 8) | ((double) this.m_oActiveItem.LastCalculatedLineIntersection.Y < (double) (this.m_oShape.Size.Height / 2) ? 1 : 2));
+      AnchorStyles anchor = (AnchorStyles)(0 | ((double)this.m_oActiveItem.LastCalculatedLineIntersection.X < (double)(this.m_oShape.Size.Width / 2) ? 4 : 8) | ((double)this.m_oActiveItem.LastCalculatedLineIntersection.Y < (double)(this.m_oShape.Size.Height / 2) ? 1 : 2));
       this.m_oShape.SuspendChange();
       if (this.m_oActiveItem.ItemType == QShapeItemType.Bezier)
       {
@@ -486,7 +488,7 @@ namespace Qios.DevSuite.Components.Design
       }
       else
       {
-        int num = (int) MessageBox.Show((IWin32Window) this.TopLevelControl, QResources.GetException("QShapeItemCollection_CountBelowMinimumItemCount", (object) this.m_oShape.Items.MinimumItemCount), this.TopLevelControl.Text, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        int num = (int)MessageBox.Show((IWin32Window)this.TopLevelControl, QResources.GetException("QShapeItemCollection_CountBelowMinimumItemCount", (object)this.m_oShape.Items.MinimumItemCount), this.TopLevelControl.Text, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
       }
     }
 
@@ -523,8 +525,8 @@ namespace Qios.DevSuite.Components.Design
 
     internal void HandleLayoutPropertyChanged()
     {
-      this.m_oZoomedShapeMargin = new QMargin((int) ((double) this.m_oShapeMargin.Left * (double) this.m_fZoom), (int) ((double) this.m_oShapeMargin.Top * (double) this.m_fZoom), (int) ((double) this.m_oShapeMargin.Bottom * (double) this.m_fZoom), (int) ((double) this.m_oShapeMargin.Right * (double) this.m_fZoom));
-      this.m_oZoomedShapeSize = this.m_oShape == null ? Size.Empty : new Size((int) ((double) this.m_oShape.Size.Width * (double) this.m_fZoom), (int) ((double) this.m_oShape.Size.Height * (double) this.m_fZoom));
+      this.m_oZoomedShapeMargin = new QMargin((int)((double)this.m_oShapeMargin.Left * (double)this.m_fZoom), (int)((double)this.m_oShapeMargin.Top * (double)this.m_fZoom), (int)((double)this.m_oShapeMargin.Bottom * (double)this.m_fZoom), (int)((double)this.m_oShapeMargin.Right * (double)this.m_fZoom));
+      this.m_oZoomedShapeSize = this.m_oShape == null ? Size.Empty : new Size((int)((double)this.m_oShape.Size.Width * (double)this.m_fZoom), (int)((double)this.m_oShape.Size.Height * (double)this.m_fZoom));
       this.m_oScrollSize = this.m_oZoomedShapeMargin.InflateSizeWithMargin(this.m_oZoomedShapeSize, true, true);
     }
 
@@ -622,13 +624,13 @@ namespace Qios.DevSuite.Components.Design
         Rectangle rectangle = this.m_oShape.ContentBounds;
         PointF pointF = this.TranslatePixel(point);
         if ((this.m_eCurrentSizingSide & QRectangleSide.North) == QRectangleSide.North)
-          rectangle = new Rectangle(rectangle.X, (int) pointF.Y, rectangle.Width, rectangle.Height - ((int) pointF.Y - rectangle.Y));
+          rectangle = new Rectangle(rectangle.X, (int)pointF.Y, rectangle.Width, rectangle.Height - ((int)pointF.Y - rectangle.Y));
         if ((this.m_eCurrentSizingSide & QRectangleSide.South) == QRectangleSide.South)
-          rectangle.Height = (int) pointF.Y - rectangle.Y;
+          rectangle.Height = (int)pointF.Y - rectangle.Y;
         if ((this.m_eCurrentSizingSide & QRectangleSide.West) == QRectangleSide.West)
-          rectangle = new Rectangle((int) pointF.X, rectangle.Y, rectangle.Width - ((int) pointF.X - rectangle.X), rectangle.Height);
+          rectangle = new Rectangle((int)pointF.X, rectangle.Y, rectangle.Width - ((int)pointF.X - rectangle.X), rectangle.Height);
         if ((this.m_eCurrentSizingSide & QRectangleSide.East) == QRectangleSide.East)
-          rectangle.Width = (int) pointF.X - rectangle.X;
+          rectangle.Width = (int)pointF.X - rectangle.X;
         bool flag1 = false;
         bool flag2 = false;
         if (rectangle.Width < 0)
@@ -705,7 +707,7 @@ namespace Qios.DevSuite.Components.Design
         SmoothingMode smoothingMode = e.Graphics.SmoothingMode;
         e.Graphics.SmoothingMode = QMisc.GetSmoothingMode(this.m_oShapeDesigner != null ? this.m_oShapeDesigner.SmoothingMode : QSmoothingMode.None);
         Rectangle rectangle = new Rectangle(this.m_oOrigin.X + this.m_oZoomedShapeMargin.Left, this.m_oOrigin.Y + this.m_oZoomedShapeMargin.Top, this.m_oZoomedShapeSize.Width, this.m_oZoomedShapeSize.Height);
-        Brush brush = (Brush) new HatchBrush(HatchStyle.LargeCheckerBoard, Color.LightGray, Color.White);
+        Brush brush = (Brush)new HatchBrush(HatchStyle.LargeCheckerBoard, Color.LightGray, Color.White);
         Pen pen1 = new Pen(Color.LightGray, 1f);
         Pen pen2 = new Pen(Color.Orange, 1f);
         pen2.DashStyle = DashStyle.Dash;
@@ -713,7 +715,7 @@ namespace Qios.DevSuite.Components.Design
         graphics.DrawRectangle(pen1, rectangle);
         if (this.m_oShapeDesigner != null && this.m_oShapeDesigner.BackgroundImage != null)
         {
-          Rectangle destRect = new Rectangle(rectangle.X + (int) ((double) this.m_oShapeDesigner.BackgroundImagePosition.X * (double) this.m_fZoom), rectangle.Y + (int) ((double) this.m_oShapeDesigner.BackgroundImagePosition.Y * (double) this.m_fZoom), (int) ((double) this.m_oShapeDesigner.BackgroundImageScale / 100.0 * (double) this.m_oShapeDesigner.BackgroundImage.Width * (double) this.m_fZoom), (int) ((double) this.m_oShapeDesigner.BackgroundImageScale / 100.0 * (double) this.m_oShapeDesigner.BackgroundImage.Height * (double) this.m_fZoom));
+          Rectangle destRect = new Rectangle(rectangle.X + (int)((double)this.m_oShapeDesigner.BackgroundImagePosition.X * (double)this.m_fZoom), rectangle.Y + (int)((double)this.m_oShapeDesigner.BackgroundImagePosition.Y * (double)this.m_fZoom), (int)((double)this.m_oShapeDesigner.BackgroundImageScale / 100.0 * (double)this.m_oShapeDesigner.BackgroundImage.Width * (double)this.m_fZoom), (int)((double)this.m_oShapeDesigner.BackgroundImageScale / 100.0 * (double)this.m_oShapeDesigner.BackgroundImage.Height * (double)this.m_fZoom));
           ImageAttributes imageAttr = new ImageAttributes();
           if (this.m_oShapeDesigner.BackgroundImageOpacity < 100)
           {
@@ -742,12 +744,12 @@ namespace Qios.DevSuite.Components.Design
         pen1.Dispose();
         brush.Dispose();
         pen2.Dispose();
-        this.m_oShape.DrawShapeDesign(new Rectangle(Point.Empty, this.m_oShape.Size), rectangle, this.m_fZoom * 1.2f, 1f, (float) this.m_iSelectMargin * this.m_fZoom, (float) this.m_iSelectMargin * this.m_fZoom, this.m_fZoom * 0.5f, this.m_fZoom * 0.25f, Color.Black, Color.Green, Color.FromArgb((int) byte.MaxValue, 0, 0), Color.FromArgb(0, 128, 0), Color.FromArgb(0, 0, (int) byte.MaxValue), Color.White, Color.FromArgb(128, 128, 128, 128), this.ShowItemNumbers, graphics);
+        this.m_oShape.DrawShapeDesign(new Rectangle(Point.Empty, this.m_oShape.Size), rectangle, this.m_fZoom * 1.2f, 1f, (float)this.m_iSelectMargin * this.m_fZoom, (float)this.m_iSelectMargin * this.m_fZoom, this.m_fZoom * 0.5f, this.m_fZoom * 0.25f, Color.Black, Color.Green, Color.FromArgb((int)byte.MaxValue, 0, 0), Color.FromArgb(0, 128, 0), Color.FromArgb(0, 0, (int)byte.MaxValue), Color.White, Color.FromArgb(128, 128, 128, 128), this.ShowItemNumbers, graphics);
         e.Graphics.SmoothingMode = smoothingMode;
       }
       if (this.m_eCurrentAction == QShapePainterControl.QShapePainterControlAction.Selecting)
       {
-        Pen pen = new Pen(Color.FromArgb(192, 0, 0, (int) byte.MaxValue), 1f);
+        Pen pen = new Pen(Color.FromArgb(192, 0, 0, (int)byte.MaxValue), 1f);
         graphics.DrawRectangle(pen, this.m_oSelectionBounds);
         pen.Dispose();
       }
@@ -762,9 +764,9 @@ namespace Qios.DevSuite.Components.Design
       this.m_oShape.Items.RestoreSelectedPartsFromCache();
     }
 
-    protected virtual void OnActiveItemChanged(EventArgs e) => this.m_oActiveItemChangedDelegate = QWeakDelegate.InvokeDelegate(this.m_oActiveItemChangedDelegate, (object) this, (object) e);
+    protected virtual void OnActiveItemChanged(EventArgs e) => this.m_oActiveItemChangedDelegate = QWeakDelegate.InvokeDelegate(this.m_oActiveItemChangedDelegate, (object)this, (object)e);
 
-    protected virtual void OnSelectedItemsChanged(EventArgs e) => this.m_oSelectedItemsChangedDelegate = QWeakDelegate.InvokeDelegate(this.m_oSelectedItemsChangedDelegate, (object) this, (object) e);
+    protected virtual void OnSelectedItemsChanged(EventArgs e) => this.m_oSelectedItemsChangedDelegate = QWeakDelegate.InvokeDelegate(this.m_oSelectedItemsChangedDelegate, (object)this, (object)e);
 
     private void ShapeMenu_Click(object sender, EventArgs e)
     {
