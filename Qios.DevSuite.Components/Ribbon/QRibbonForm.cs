@@ -251,7 +251,7 @@ namespace Qios.DevSuite.Components.Ribbon
 
     private Size AdjustPossibleFullSize(CreateParams createParams, int width, int height)
     {
-      Size size = QControlHelper.GetDefaultNonClientAreaMargin(createParams, (MainMenu) null).InflateSizeWithMargin(this.m_oAppliedClientSize, true, true);
+      Size size = QControlHelper.GetDefaultNonClientAreaMargin(createParams, (MenuStrip) null).InflateSizeWithMargin(this.m_oAppliedClientSize, true, true);
       if (size.Width == width && size.Height == height)
       {
         width = this.m_oAppliedClientSize.Width + this.m_oClientAreaMargin.Horizontal;
