@@ -54,6 +54,15 @@ Each removed control has a recommended replacement control. Refer to the followi
 
 </details>
 
+# Prerequisites
+* .NET Core 6.0
+* Windows
 
-
+# Getting started
+```bash
+$ git clone https://github.com/TrevorDArcyEvans/Qios.DevSuite.Components.git
+$ cd Qios.DevSuite.Components
+$ dotnet restore
+$ dotnet build
+```
 
