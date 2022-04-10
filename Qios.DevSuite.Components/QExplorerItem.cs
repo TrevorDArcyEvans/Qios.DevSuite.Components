@@ -306,7 +306,8 @@ namespace Qios.DevSuite.Components
       {
         if (this.ParentContainer == null || !(this.ParentContainer is System.Windows.Forms.Control))
           return false;
-        if (!(this.ParentContainer is QExplorerBar parentContainer) && this.ParentContainer != null)
+        var parentContainer = this.ParentContainer as QExplorerBar;
+        if (parentContainer == null && this.ParentContainer != null)
           return base.MouseIsOverMenuItem;
         return parentContainer != null && parentContainer.Visible && this.Bounds.Contains(parentContainer.ContainerPointToClient(System.Windows.Forms.Control.MousePosition));
       }

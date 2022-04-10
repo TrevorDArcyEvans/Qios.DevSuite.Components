@@ -154,7 +154,7 @@ namespace Qios.DevSuite.Components
               }
               if (this.ItemPainter.ShowIcon((QCommand) command, configuration1, destinationControl))
                 num5 += command.IconBoundsOverlap;
-              Rectangle rectangle3;
+              Rectangle rectangle3 = new Rectangle();
               ref Rectangle local1 = ref rectangle3;
               int x3 = rectangle.X;
               qmargin = qexplorerBarPaintParams.GroupItemConfiguration.ItemMargin;
@@ -1039,7 +1039,7 @@ namespace Qios.DevSuite.Components
         }
         if (colors != null)
           QRectanglePainter.Default.Paint(command1.DepersonalizeItemBounds, (IQAppearance) qexplorerBarPaintParams.ItemConfiguration.ActivatedItemAppearance, colors, QRectanglePainterProperties.Default, QAppearanceFillerProperties.Default, QPainterOptions.Default, graphics);
-        Rectangle rectangle2;
+        Rectangle rectangle2 = new Rectangle();
         ref Rectangle local = ref rectangle2;
         rectangle1 = command1.DepersonalizeItemBounds;
         int left1 = rectangle1.Left;

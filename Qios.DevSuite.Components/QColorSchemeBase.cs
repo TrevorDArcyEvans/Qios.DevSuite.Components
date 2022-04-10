@@ -398,7 +398,8 @@ namespace Qios.DevSuite.Components
         default:
           if (this.IsGlobalColorScheme)
             return (QColor) this.m_aColors[(object) colorName];
-          if (!(this.m_aColors[(object) colorName] is QColor color) && QColorScheme.Global.IsValidColor(colorName))
+          var color = this.m_aColors[(object) colorName] as QColor;
+          if (color == null && QColorScheme.Global.IsValidColor(colorName))
           {
             color = new QColor(this, colorName);
             this.AddColor(color);

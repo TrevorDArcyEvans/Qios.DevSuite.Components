@@ -185,7 +185,8 @@ namespace Qios.DevSuite.Components
             string str = XmlConvert.EncodeName(themeName);
             if (QXmlHelper.ContainsChildElement(element, str))
             {
-              object obj = QMisc.GetViaTypeConverter((object) QXmlHelper.GetChildElementString(element, str), typeof (Color)) ?? Convert.ChangeType(obj, typeof (Color), (IFormatProvider) CultureInfo.InvariantCulture);
+              object obj = null;
+              obj = QMisc.GetViaTypeConverter((object) QXmlHelper.GetChildElementString(element, str), typeof (Color)) ?? Convert.ChangeType(obj, typeof (Color), (IFormatProvider) CultureInfo.InvariantCulture);
               try
               {
                 if (obj is Color color)

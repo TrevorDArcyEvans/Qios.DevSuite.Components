@@ -138,7 +138,8 @@ namespace Qios.DevSuite.Components
       int length = 1;
       bool flag1 = false;
       bool flag2 = false;
-      if (part is IQScrollablePart qscrollablePart && qscrollablePart.ScrollData != null && qscrollablePart.ScrollData.HasVisibleScrollableAreas)
+      var qscrollablePart = part as IQScrollablePart;
+      if (qscrollablePart != null && qscrollablePart.ScrollData != null && qscrollablePart.ScrollData.HasVisibleScrollableAreas)
       {
         flag1 = true;
         ++length;

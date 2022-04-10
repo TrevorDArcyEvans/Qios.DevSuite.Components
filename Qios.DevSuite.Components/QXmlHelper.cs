@@ -65,7 +65,8 @@ namespace Qios.DevSuite.Components
             str = propertiesTo.Name.ToLower(CultureInfo.InvariantCulture);
           if (QXmlHelper.ContainsChildElement(element, str))
           {
-            object obj = QMisc.GetViaTypeConverter((object) QXmlHelper.GetChildElementString(element, str), propertiesTo.PropertyType) ?? Convert.ChangeType(obj, propertiesTo.PropertyType, (IFormatProvider) CultureInfo.InvariantCulture);
+            object obj = null;
+            obj = QMisc.GetViaTypeConverter((object) QXmlHelper.GetChildElementString(element, str), propertiesTo.PropertyType) ?? Convert.ChangeType(obj, propertiesTo.PropertyType, (IFormatProvider) CultureInfo.InvariantCulture);
             try
             {
               propertiesTo.SetValue(destination, obj);
@@ -150,7 +151,8 @@ label_3:
       string name,
       object innerValue)
     {
-      if (QXmlHelper.AddElement(parentNode, name) is XmlElement xmlElement && innerValue != null)
+      var xmlElement = QXmlHelper.AddElement(parentNode, name) as XmlElement;
+      if (xmlElement != null && innerValue != null)
         xmlElement.InnerText = QMisc.GetAsString(innerValue);
       return (IXPathNavigable) xmlElement;
     }

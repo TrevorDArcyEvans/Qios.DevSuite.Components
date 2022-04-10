@@ -1747,7 +1747,8 @@ namespace Qios.DevSuite.Components
             if (appearance != null)
             {
               qcolorSet = this.ColorHost.GetItemColorSet((object) this, this.ItemState, (object) null);
-              if (this.GetObjectPainter(QPartPaintLayer.Background, typeof (QPartShapePainter)) is QPartShapePainter objectPainter1)
+              var objectPainter1 = this.GetObjectPainter(QPartPaintLayer.Background, typeof (QPartShapePainter)) as QPartShapePainter;
+              if (objectPainter1 != null)
               {
                 objectPainter1.Appearance = appearance;
                 objectPainter1.DrawOnBounds = QPartBoundsType.Bounds;

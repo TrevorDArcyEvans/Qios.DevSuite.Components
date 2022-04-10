@@ -597,7 +597,8 @@ namespace Qios.DevSuite.Components
       QTabControl qtabControl = (QTabControl) null;
       this.ButtonDockStyle = (QTabButtonDockStyle) QXmlHelper.GetChildElementEnum(persistableObjectElement, "buttonDockStyle", typeof (QTabButtonDockStyle));
       this.ButtonOrder = QXmlHelper.GetChildElementInt(persistableObjectElement, "buttonOrder");
-      if (parentState is IXPathNavigable persistableObjectElement1)
+      var persistableObjectElement1 = parentState as IXPathNavigable;
+      if (persistableObjectElement1 != null)
         qtabControl = manager.GetPersistableObject(persistableObjectElement1) as QTabControl;
       if (persistableObjectElement1 != null && (this.TabControl == null || this.TabControl != qtabControl))
         this.TabControl = qtabControl;
