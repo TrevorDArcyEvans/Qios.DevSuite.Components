@@ -305,13 +305,14 @@ namespace Qios.DevSuite.Components
       rect.right -= indent;
       rect.bottom -= indent;
       IntPtr rectRgnIndirect2 = NativeMethods.CreateRectRgnIndirect(ref rect);
-      IntPtr rectRgnIndirect3 = NativeMethods.CreateRectRgnIndirect(ref new NativeMethods.RECT()
+      var lprc = new NativeMethods.RECT()
       {
         left = 0,
         top = 0,
         right = 0,
         bottom = 0
-      });
+      };
+      IntPtr rectRgnIndirect3 = NativeMethods.CreateRectRgnIndirect(ref lprc);
       NativeMethods.CombineRgn(rectRgnIndirect3, rectRgnIndirect1, rectRgnIndirect2, 3);
       NativeMethods.DeleteObject(rectRgnIndirect1);
       NativeMethods.DeleteObject(rectRgnIndirect2);
@@ -340,11 +341,12 @@ namespace Qios.DevSuite.Components
           flag = !flag;
         }
         IntPtr hbitmap = bitmap.GetHbitmap();
-        NativeHelper.m_hHalfToneBrush = NativeMethods.CreateBrushIndirect(ref new NativeMethods.LOGBRUSH()
+        var logbrush = new NativeMethods.LOGBRUSH()
         {
           lbStyle = 3U,
           lbHatch = (uint) (int) hbitmap
-        });
+        };
+        NativeHelper.m_hHalfToneBrush = NativeMethods.CreateBrushIndirect(ref logbrush);
       }
       return NativeHelper.m_hHalfToneBrush;
     }
