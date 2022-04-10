@@ -147,7 +147,6 @@ namespace Qios.DevSuite.Components
       switch (appearance)
       {
         case null:
-        case null:
           IQPadding[] defaultPaddings = new IQPadding[length];
           int num1 = 0;
           IQPadding[] qpaddingArray1 = defaultPaddings;
