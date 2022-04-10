@@ -153,7 +153,7 @@ namespace Qios.DevSuite.Components
           int index1 = num1;
           int num2 = index1 + 1;
           // ISSUE: variable of a boxed type
-          __Boxed<QPadding> local = (ValueType) padding;
+          var local = (ValueType) padding;
           qpaddingArray1[index1] = (IQPadding) local;
           if (flag2)
             defaultPaddings[num2++] = (IQPadding) appearance.Shape;
