@@ -300,7 +300,7 @@ namespace Qios.DevSuite.Components
     public QCompositeWindowConfiguration Configuration
     {
       get => base.Configuration as QCompositeWindowConfiguration;
-      set => this.Configuration = (QFloatingWindowConfiguration) value;
+      set => this.Configuration = value;
     }
 
     [DefaultValue(typeof (Size), "0, 0")]
