@@ -37,7 +37,7 @@ namespace Qios.DevSuite.Components.Design
     private QRectangleSide m_eCurrentSizingSide;
     private Rectangle m_oSelectionBounds = Rectangle.Empty;
     private Point m_oOrigin = Point.Empty;
-    private ContextMenu cmShapeMenu;
+    private ContextMenuStrip cmShapeMenu;
     private MenuItem miZoomIn;
     private MenuItem miZoomOut;
     private MenuItem miFitShape;
@@ -105,8 +105,8 @@ namespace Qios.DevSuite.Components.Design
         this.miMirrorBottomToTop
       });
       this.miLineVisible = new MenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_LineVisible"), new EventHandler(this.ShapeMenu_Click));
-      this.cmShapeMenu = new ContextMenu();
-      this.cmShapeMenu.MenuItems.AddRange(new MenuItem[21]
+      this.cmShapeMenu = new ContextMenuStrip();
+      this.cmShapeMenu.Items.AddRange(new MenuItem[21]
       {
         this.miZoomIn,
         this.miZoomOut,
