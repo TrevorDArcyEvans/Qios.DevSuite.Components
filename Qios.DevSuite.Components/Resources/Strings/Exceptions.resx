@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="QDockingWindow_CanDockOnOtherControlRightViolation" xml:space="preserve">
+    <value>Cannot Dock a QDockingWindow on an other QDockingWindow on the Right when CanDockOnOtherControlRight is false</value>
+  </data>
+  <data name="QMarginConverter_InvalidFormat" xml:space="preserve">
+    <value>Format must be 'Bottom, Left, Right, Top'</value>
+  </data>
+  <data name="QDockingWindow_CanDockLeftViolation" xml:space="preserve">
+    <value>"Cannot Dock a QDockingWindow on Left when CanDockLeft is false"</value>
+  </data>
+  <data name="QToolBar_Dock_NoDockWhenHosted" xml:space="preserve">
+    <value>A QToolBar can not get docked when hosted on a QToolBarHost</value>
+  </data>
+  <data name="QDockingWindow_CanDockRightViolation" xml:space="preserve">
+    <value>Cannot Dock a QDockingWindow on Right when CanDockRight is false</value>
+  </data>
+  <data name="QTabButtonDragEventArgs_CannotSetCancel" xml:space="preserve">
+    <value>Cannot set the Cancel property during this event, normally this property can only be set during 'dragging' events</value>
+  </data>
+  <data name="QDockingWindow_CanDockOnOtherControlTabbedViolation" xml:space="preserve">
+    <value>Cannot Dock a QDockingWindow on an other QDockingWindow in a Tabbed Orientation when CanDockOnOtherControlTabbed is false</value>
+  </data>
+  <data name="QAppearanceBase_Between_Invalid" xml:space="preserve">
+    <value>Value must be between {0} and {1}</value>
+  </data>
+  <data name="QXml_XPathNavigableIsNotAnXmlElementOrDocument" xml:space="preserve">
+    <value>The specified IXPathNavigable is not an XmlElement or an XmlDocument</value>
+  </data>
+  <data name="QFontDefinition_InvalidFontFamily" xml:space="preserve">
+    <value>The specified FontFamily '{0}' could not be found.</value>
+  </data>
+  <data name="QTabButtonDragEventArgs_CannotSetAllowDrop" xml:space="preserve">
+    <value>Cannot set the AllowDrop property during this event, normally this property can only be set during 'dragover' events</value>
+  </data>
+  <data name="QColorScheme_FileCannotBeLoaded" xml:space="preserve">
+    <value>Cannot load the XML from file '{0}'</value>
+  </data>
+  <data name="General_ParameterNull" xml:space="preserve">
+    <value>The specified parameter '{0}' cannot be null</value>
+  </data>
+  <data name="QTabStripButtonChangeEventArgs_CannotSetToButton" xml:space="preserve">
+    <value>Cannot set the ToPage during this event, normally this property can only be set during 'changing' events.</value>
+  </data>
+  <data name="QDockControl_IconSize_NotEmpty" xml:space="preserve">
+    <value>IconSize cannot be empty</value>
+  </data>
+  <data name="QColor_ThemeNotDefined" xml:space="preserve">
+    <value>Cannot set color: {0} for theme: {1}. Theme is not defined. Add the Theme to the ColorScheme of the Control or call QColor.SetColor with checkIfThemeExists set to false.</value>
+  </data>
+  <data name="QMenuItemCollectionLoad_FileCannotBeLoaded" xml:space="preserve">
+    <value>Cannot load the XML from file '{0}'</value>
+  </data>
+  <data name="QPersistence_OwnerNull" xml:space="preserve">
+    <value>Cannot perform the requested action. The OwnerControl is not set.</value>
+  </data>
+  <data name="QMarkupText_MarkupText_CannotSet_UnknownException" xml:space="preserve">
+    <value>"Cannot set the MarkupText because of unknown exception"</value>
+  </data>
+  <data name="QDockBar_Dock_Invalid" xml:space="preserve">
+    <value>A QDockBar cannot be docked 'Fill' or 'None'</value>
+  </data>
+  <data name="QFloatingMenuConfiguration_AnimateTime_NotNegative" xml:space="preserve">
+    <value>AnimateTime must be greater then 0</value>
+  </data>
+  <data name="QDockingWindow_CanDockOnOtherControlLeftViolation" xml:space="preserve">
+    <value>"Cannot Dock a QDockingWindow on an other QDockingWindow on the Left when CanDockOnOtherControlLeft is false</value>
+  </data>
+  <data name="QColorScheme_ColorSchemeNotFound" xml:space="preserve">
+    <value>Cannot load the items from XML, the colorScheme element is not found.</value>
+  </data>
+  <data name="QStringOrderHelper_InvalidCount" xml:space="preserve">
+    <value>The string does not contain all or to much values. The string must be like 'value1, value2, value3'. If you want to add custom parts, set this string to String.Empty</value>
+  </data>
+  <data name="QPersistence_TypeNotFound" xml:space="preserve">
+    <value>The type '{0}' is not found.</value>
+  </data>
+  <data name="QToolBar_PersonalizedBehaviorCannotDepend" xml:space="preserve">
+    <value>The PersonalizedItemBehavior of a QToolBar or QMainMenu cannot be set to DependsOnPersonalized.</value>
+  </data>
+  <data name="General_ReturnValueNull" xml:space="preserve">
+    <value>The return value of '{0}' was null</value>
+  </data>
+  <data name="QPanel_Dock_Invalid" xml:space="preserve">
+    <value>The text of a QPanel cannot be docked 'Fill' or 'None'</value>
+  </data>
+  <data name="QToolBar_Dock_NotFill" xml:space="preserve">
+    <value>A QToolBar cannot be docked 'Fill'</value>
+  </data>
+  <data name="QPropertyBag_PropertyNotDefined" xml:space="preserve">
+    <value>The property with name '{0}' is not defined in this QPropertyBag. Be sure to call DefineProperty on the property first.</value>
+  </data>
+  <data name="QDockingWindow_SlidingTime_InvalidValue" xml:space="preserve">
+    <value>SlidingTime must be a value between 1 and 10000</value>
+  </data>
+  <data name="QCompositeItemBaseDesigner_CannotAddItem" xml:space="preserve">
+    <value>Cannot add sub-items to an item of type '{0}'. {0} has no sub-items to design.</value>
+  </data>
+  <data name="QColor_SetColor_NotEmpty" xml:space="preserve">
+    <value>Cannot set a ColorValue for the Empty QColor</value>
+  </data>
+  <data name="QPartHelper_ContentPartOrderPartNotFound" xml:space="preserve">
+    <value>The part with name '{0}' is not found. The string must be like 'partName1, partName2, partName3'. If you want to add custom parts, set this string to String.Empty</value>
+  </data>
+  <data name="General_ReturnValueWasWindowsError" xml:space="preserve">
+    <value>The return value of '{0}' was a Windows Error: {1}</value>
+  </data>
+  <data name="QColor_Current_NotEmpty" xml:space="preserve">
+    <value>Cannot set a ColorValue for the Empty QColor</value>
+  </data>
+  <data name="QPartCalculatedProperties_PullCalculatedProperties_NoProperties" xml:space="preserve">
+    <value>Cannot pull calculated properties. There aren't any.</value>
+  </data>
+  <data name="QStatusBarPanelCollection_NotNull" xml:space="preserve">
+    <value>QStatusBarPanelCollection Error, {0} cannot be null</value>
+  </data>
+  <data name="QStringOrderHelper_ItemNotFound" xml:space="preserve">
+    <value>The value with name '{0}' is not found. The string must be like 'value1, value2, value3'. If you want to add custom parts, set this string to String.Empty</value>
+  </data>
+  <data name="QInputBox_WrongValueMember" xml:space="preserve">
+    <value>The value member was not found in the data source</value>
+  </data>
+  <data name="QTabStrip_CannotScroll" xml:space="preserve">
+    <value>Cannot scroll the tabStrip when its SizingBehavior is not set to 'Scroll'</value>
+  </data>
+  <data name="QPersistence_CannotSavePersistableObject" xml:space="preserve">
+    <value>Cannot save the persistence '{0}'</value>
+  </data>
+  <data name="QMisc_CannotSetDefaultValuesGeneral" xml:space="preserve">
+    <value>"Cannot set the property {0}.{1} to its defaultValue.</value>
+  </data>
+  <data name="QPersistence_CannotCreateDirectory" xml:space="preserve">
+    <value>Cannot create the directory {0}</value>
+  </data>
+  <data name="QColorScheme_FileCannotBeSaved" xml:space="preserve">
+    <value>Cannot save the XML to file '{0}'</value>
+  </data>
+  <data name="QExplorerBarConfiguration_RoundedCornerSize_Not_Negative" xml:space="preserve">
+    <value>RoundedCornerSize cannot be negative</value>
+  </data>
+  <data name="QPersistence_PersistableObjectWithGuidnotFound" xml:space="preserve">
+    <value>The persistableObject with guid '{0}' of type '{1}' with name '{2}' is not found in the PersistableObjects collection.</value>
+  </data>
+  <data name="QPersistence_CannotSaveFile" xml:space="preserve">
+    <value>Cannot save the persistence to {0}</value>
+  </data>
+  <data name="QToolBar_Anchor_Invalid" xml:space="preserve">
+    <value>Cannot set Anchor to Bottom or Right when hosted on a QToolBarHost</value>
+  </data>
+  <data name="QMenuItemCreation_ObjectNotAMenuItem" xml:space="preserve">
+    <value>The Item from type '{0}' is not a QMenuItem.</value>
+  </data>
+  <data name="QBalloon_BalloonWindowClassReference" xml:space="preserve">
+    <value>
+		Invalid class reference provided for the creation of a QBalloonWindow.
+		</value>
+  </data>
+  <data name="QColor_ReferenceNotFound" xml:space="preserve">
+    <value>The specified color reference: '{0}' is not a valid color in the QColorScheme.</value>
+  </data>
+  <data name="QTabControl_TabStripWithDockNotDefined" xml:space="preserve">
+    <value>The QTabStrip for the specified DockStyle: '{0}' is not defined. Cannot perform this action.</value>
+  </data>
+  <data name="QRibbonPageChangeEventArgs_CannotSetToPage" xml:space="preserve">
+    <value>Cannot set the ToPage during this event, normally this property can only be set during 'changing' events</value>
+  </data>
+  <data name="QPersistence_CannotFindFile" xml:space="preserve">
+    <value>Cannot load the persistence. The file '{0}' does not exists.</value>
+  </data>
+  <data name="QMainMenu_Anchor_Invalid" xml:space="preserve">
+    <value>Cannot set Anchor to Bottom or Right when hosted on a QToolBarHost</value>
+  </data>
+  <data name="QInputBox_DataBinding" xml:space="preserve">
+    <value>Databinding of the Items collection is only supported when the QInputBox is configured as a DropDown, DropDownList or TextBox</value>
+  </data>
+  <data name="QInputBox_BadDataSourceForComplexBinding" xml:space="preserve">
+    <value>Complex DataBinding accepts as a data source either an IList or an IListSource</value>
+  </data>
+  <data name="QPersistence_CannotCreateInstance" xml:space="preserve">
+    <value>Cannot create an instance of type '{0}'. Make sure it is available and implements a constructor with no parameters.</value>
+  </data>
+  <data name="QExplorerBar_AnimateTime_InvalidValue" xml:space="preserve">
+    <value>SlidingTime must be a value between 1 and 10000</value>
+  </data>
+  <data name="QInputBox_MissingValueMember" xml:space="preserve">
+    <value>The value member is missing. It is not possible to set the value.</value>
+  </data>
+  <data name="QThemeInfoCollection_NotSystemTheme" xml:space="preserve">
+    <value>Cannot {0} theme with name {1}. The theme is a system theme</value>
+  </data>
+  <data name="QDockingWindow_CanSlideViolation" xml:space="preserve">
+    <value>Cannot set a QDockingWindow into Slide mode when CanSlide of that QDockingWindow is false</value>
+  </data>
+  <data name="" xml:space="preserve">
+    <value />
+  </data>
+  <data name="QInputBox_DataSourceLocksItems" xml:space="preserve">
+    <value>Setting a data source locks the Items collection</value>
+  </data>
+  <data name="QCompositeItem_CustomChildWindowCircularReference" xml:space="preserve">
+    <value>The specified custom child window is not valid. It's already set as a parent or ancestor of this item.</value>
+  </data>
+  <data name="QInputBox_NotDropDown" xml:space="preserve">
+    <value>This functionality is only supported when the QInputBox is configured as a DropDown or DropDownList</value>
+  </data>
+  <data name="QShape_PrecisionInvalid" xml:space="preserve">
+    <value>The Precision value must be between 0 and 15</value>
+  </data>
+  <data name="QMainMenu_Dock_NotFill" xml:space="preserve">
+    <value>A MainMenu cannot be docked 'Fill'</value>
+  </data>
+  <data name="QPartLinearLayoutEngine_ApplyConstraintsToCollectionInfiniteLoop" xml:space="preserve">
+    <value>The while-loop of QPartLinearLayoutEngine.ApplyConstraintsToCollection of the part of type '{1}', with name '{2}', has run more than {0} times. It should only run once or twice.</value>
+  </data>
+  <data name="QToolBarRowCollection_RowNotInCollection" xml:space="preserve">
+    <value>Specified row is not in the collection</value>
+  </data>
+  <data name="QFontDefinition_InvalidFormat" xml:space="preserve">
+    <value>Format must be the following 'FontFamilyName; FontSize; Style=Bold, Italic, Strikeout'</value>
+  </data>
+  <data name="QDockingWindow_CanDockOnOtherControlBottomViolation" xml:space="preserve">
+    <value>Cannot Dock a QDockingWindow on an other QDockingWindow on the Bottom when CanDockOnOtherControlBottom is false</value>
+  </data>
+  <data name="QToolBarRow_ToolBarNotOnRow" xml:space="preserve">
+    <value>Specified toolBar is not on the row</value>
+  </data>
+  <data name="QPersistence_PersistableHostNotFound" xml:space="preserve">
+    <value>The persistableObject host with guid '{0}' is not found.</value>
+  </data>
+  <data name="QNotificationIconHelper_CannotFindWindow" xml:space="preserve">
+    <value>Cannot find the window with class '{0}' and text '{1}'</value>
+  </data>
+  <data name="QMarkupText_MarkupText_CannotSet" xml:space="preserve">
+    <value>Cannot set the MarkupText. The value does not contain valid XML.</value>
+  </data>
+  <data name="QTabStripButtonChangeEventArgs_CannotCancel" xml:space="preserve">
+    <value>Cannot cancel during this event, normally this property can only be set during 'changing' events.</value>
+  </data>
+  <data name="QTabStripConfiguration_NavigationAreaContentAlignment_CannotStretch" xml:space="preserve">
+    <value>The NavigationAreaContentAlignment cannot be set to 'Stretched'</value>
+  </data>
+  <data name="QColor_CircularColorReference" xml:space="preserve">
+    <value>The specified color reference: '{1}' on the QColor '{0}' is a circular reference.</value>
+  </data>
+  <data name="QPersistence_CannotLoadFile" xml:space="preserve">
+    <value>Cannot load the persistence. The file '{0}' cannot be opened or does not contain valid XML.</value>
+  </data>
+  <data name="QFontStyle_InvalidFormat" xml:space="preserve">
+    <value>Format must be one or more of the following values 'Bold; Italic; Strikeout; Underline;'</value>
+  </data>
+  <data name="QTabStrip_Dock_Invalid" xml:space="preserve">
+    <value>The Dock property cannot be Fill or None</value>
+  </data>
+  <data name="QThemeInfo_CannotChangeSystemTheme" xml:space="preserve">
+    <value>Cannot change {0} because this is a system theme</value>
+  </data>
+  <data name="QMenuItemCreation_ConstructorThrewException" xml:space="preserve">
+    <value>Cannot create the item, the constructor of object with type '{0}' threw an exception.</value>
+  </data>
+  <data name="QDockingWindow_CanDockTopViolation" xml:space="preserve">
+    <value>Cannot Dock a QDockingWindow on Top when CanDockTop is false</value>
+  </data>
+  <data name="QInputBox_WrongDisplayMember" xml:space="preserve">
+    <value>The display member was not found in the data source</value>
+  </data>
+  <data name="QDockingWindow_CanDockBottomViolation" xml:space="preserve">
+    <value>Cannot Dock a QDockingWindow on Bottom when CanDockBottom is false</value>
+  </data>
+  <data name="QFastPropertyBag_PropertyNotDefined" xml:space="preserve">
+    <value>The property with index '{0}' is not defined in this QFastPropertyBag. Be sure to call DefineProperty on the property first.</value>
+  </data>
+  <data name="QMarkupTextStyle_ElementTypeNotQMarkupTextElement" xml:space="preserve">
+    <value>The specified type: {0} does not inherit from QMarkupTextElement.</value>
+  </data>
+  <data name="QMenuItemCreation_CannotFindObjectWithType" xml:space="preserve">
+    <value>Cannot create the item, object with type '{0}' is not found.</value>
+  </data>
+  <data name="QPartHelper_UnknownContent" xml:space="preserve">
+    <value>The size of the custom QPart.ContentObject '{0}' can not be determined.</value>
+  </data>
+  <data name="QInputBox_SortWithDataSource" xml:space="preserve">
+    <value>An attempt was made to sort a QInputBox that is attached to a data source</value>
+  </data>
+  <data name="QObjectCloner_CannotFindConstructors" xml:space="preserve">
+    <value>QObjectCloner cannot find constructors of type '{0}'.</value>
+  </data>
+  <data name="QTabControl_NonExisitingActiveTabPage" xml:space="preserve">
+    <value>The ActiveTabPage does not exists in the QTabControl. Non existing TabPages can only be activated while initializing. When doing this during the initialize process be sure to add the QTabPage before calling EndInit().</value>
+  </data>
+  <data name="QSpacingConverter_InvalidFormat" xml:space="preserve">
+    <value>Format must be 'Before, After'</value>
+  </data>
+  <data name="QMainMen_Dock_DontDockWhenHosted" xml:space="preserve">
+    <value>A QMainMenu can not get docked when hosted on a QToolBarHost</value>
+  </data>
+  <data name="QTabPageChangeEventArgs_CannotSetToPage" xml:space="preserve">
+    <value>Cannot set the ToPage during this event, normally this property can only be set during 'changing' events</value>
+  </data>
+  <data name="QMenuItemCollectionLoad_FileCannotBeSaved" xml:space="preserve">
+    <value>Cannot save the XML to file '{0}'</value>
+  </data>
+  <data name="QPointFConverter_InvalidFormat" xml:space="preserve">
+    <value>Format must be '1.00;1.00'</value>
+  </data>
+  <data name="QSystemConfiguration_SnapshotInvalidLength" xml:space="preserve">
+    <value>Snapshot has invalid length</value>
+  </data>
+  <data name="QPersistence_GuidIsEmpty" xml:space="preserve">
+    <value>A persistableObject must be found by the PersistGuid, but this is empty.</value>
+  </data>
+  <data name="QPaddingConverter_InvalidFormat" xml:space="preserve">
+    <value>Format must be 'Bottom, Left, Right, Top'</value>
+  </data>
+  <data name="QPersistence_ObjectIsNotPersistableObject" xml:space="preserve">
+    <value>The object of type '{0}' does not implement the IQPersistableObject interface.</value>
+  </data>
+  <data name="QMenuItemCollectionLoad_MenuItemCollectionNotFound" xml:space="preserve">
+    <value>Cannot load the items from XML, the menuItemCollection element is not found.</value>
+  </data>
+  <data name="QPersistence_ElementWithGuidNotFound" xml:space="preserve">
+    <value>Cannot find the XML element '{0}' with guid '{1}'.</value>
+  </data>
+  <data name="QPartHelper_ContentPartOrderInvalidCount" xml:space="preserve">
+    <value>
+		The string does not contain all part names. The string must be like 'partName1, partName2, partName3'. If you want to add custom parts, set this string to String.Empty</value>
+  </data>
+  <data name="QCommandConfiguration_ExpandingDelay_Not_Negative" xml:space="preserve">
+    <value>ExpandingDelay cannot be negative</value>
+  </data>
+  <data name="QFlagsEditor_NoZeroValueInEnum" xml:space="preserve">
+    <value>Enumeration does not contain an item with a value of 0.</value>
+  </data>
+  <data name="QTabButtonCollection_ButtonAlreadyInOtherCollection" xml:space="preserve">
+    <value>The QTabButton with text '{0}' cannot be added to this collection, it already exists in an other QTabButtonCollection. </value>
+  </data>
+  <data name="QShapeItemCollection_CountBelowMinimumItemCount" xml:space="preserve">
+    <value>Cannot remove the QShapeItem. There must be at least {0} items in this QShape.</value>
+  </data>
+  <data name="QXmlHelper_InvalidXml" xml:space="preserve">
+    <value>The specified text is not valid XML.</value>
+  </data>
+  <data name="QDockingWindow_CanDockOnOtherControlTopViolation" xml:space="preserve">
+    <value>Cannot Dock a QDockingWindow on an other QDockingWindow on the Top when CanDockOnOtherControlTop is false</value>
+  </data>
+  <data name="QTabControl_EndInitNonExistingActiveTabPage" xml:space="preserve">
+    <value>The ActiveTabPage was not added to the QTabControl before the call to EndInit(). Be sure to added the ActiveTabPage to the QTabControl before calling EndInit().</value>
+  </data>
+  <data name="QConfiguration_Between_Invalid" xml:space="preserve">
+    <value>Value must be between {0} and {1}</value>
+  </data>
+  <data name="QOffscreenBitmapManager_MaxUsedSets" xml:space="preserve">
+    <value>The Off-screen BitmapManager has {0} sets of bitmaps, you possibly didn't free a used set.</value>
+  </data>
+  <data name="QXmlHelper_InitializeObjectFromXmlSetThrewException" xml:space="preserve">
+    <value>The set method of {0}.{1} threw an exception while setting it to value {2}</value>
+  </data>
+  <data name="QTabButton_CannotUseControlBackground" xml:space="preserve">
+    <value>Cannot use ControlBackground for TabButton when the Control of the TabButton is not a QContainerControl</value>
+  </data>
+  <data name="QCommandConfiguration_DepersonalizeDelay_Not_Negative" xml:space="preserve">
+    <value>DepersonalizeDelay cannot be negative</value>
+  </data>
+  <data name="QTabPageChangeEventArgs_CannotSetCancel" xml:space="preserve">
+    <value>Cannot set the Cancel property during this event, normally this property can only be set during 'changing' events</value>
+  </data>
+  <data name="QMisc_CannotSetDefaultValues" xml:space="preserve">
+    <value>"Cannot set the property {0}.{1} to its defaultValue: {2}</value>
+  </data>
+  <data name="QToolBarConfiguration_RoundedBevelCornerSize_Not_Negative" xml:space="preserve">
+    <value>RoundedBevelCornerSize cannot be negative</value>
+  </data>
+  <data name="QTabStrip_SetActiveButtonInvalid" xml:space="preserve">
+    <value>Cannot set the Active QTabButton to the button with text {0}, it does not exists in the QTabButtonCollection.</value>
+  </data>
+  <data name="QThemeInfoCollection_NotNull" xml:space="preserve">
+    <value>QThemeInfoCollection Error, {0} cannot be null</value>
+  </data>
+</root>
