@@ -47,12 +47,12 @@ namespace Qios.DevSuite.Components.Design
     private ToolStripMenuItem miConvertToBezier;
     private ToolStripMenuItem miAddPoint;
     private ToolStripMenuItem miRemovePoint;
-    private ToolStripDropDownMenu miAnchor;
+    private ToolStripMenuItem miAnchor;
     private ToolStripMenuItem miAnchorTopLeft;
     private ToolStripMenuItem miAnchorTopRight;
     private ToolStripMenuItem miAnchorBottomLeft;
     private ToolStripMenuItem miAnchorBottomRight;
-    private ToolStripDropDownMenu miMirror;
+    private ToolStripMenuItem miMirror;
     private ToolStripMenuItem miMirrorLeftToRight;
     private ToolStripMenuItem miMirrorRightToLeft;
     private ToolStripMenuItem miMirrorTopToBottom;
@@ -82,9 +82,8 @@ namespace Qios.DevSuite.Components.Design
       this.miAnchorTopRight = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_AnchorTopRight"), null, new EventHandler(this.ShapeMenu_Click));
       this.miAnchorBottomLeft = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_AnchorBottomLeft"), null, new EventHandler(this.ShapeMenu_Click));
       this.miAnchorBottomRight = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_AnchorBottomRight"), null, new EventHandler(this.ShapeMenu_Click));
-      this.miAnchor = new ToolStripDropDownMenu(/*QResources.GetGeneral("QShapePainterControl_ShapeMenu_Anchor")*/);
-      this.miAnchor.Click += this.ShapeMenu_Click;
-      this.miAnchor.Items.AddRange(new ToolStripMenuItem[4]
+      this.miAnchor = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_Anchor"), null, new EventHandler(this.ShapeMenu_Click));
+      this.miAnchor.DropDownItems.AddRange(new ToolStripMenuItem[4]
       {
         this.miAnchorTopLeft,
         this.miAnchorTopRight,
@@ -97,9 +96,8 @@ namespace Qios.DevSuite.Components.Design
       this.miMirrorBottomToTop = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_MirrorBottomToTop"), null, new EventHandler(this.ShapeMenu_Click));
       this.miFlipHorizontal = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_FlipHorizontal"), null, new EventHandler(this.ShapeMenu_Click));
       this.miFlipVertical = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_FlipVertical"), null, new EventHandler(this.ShapeMenu_Click));
-      this.miMirror = new ToolStripDropDownMenu( /*QResources.GetGeneral("QShapePainterControl_ShapeMenu_Mirror")*/);
-      this.miMirror.Click += this.ShapeMenu_Click;
-      this.miMirror.Items.AddRange(new ToolStripMenuItem[4]
+      this.miMirror = new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_Mirror"), null, new EventHandler(this.ShapeMenu_Click));
+      this.miMirror.DropDownItems.AddRange(new ToolStripMenuItem[4]
       {
         this.miMirrorLeftToRight,
         this.miMirrorRightToLeft,
@@ -123,9 +121,9 @@ namespace Qios.DevSuite.Components.Design
         this.miAddPoint,
         this.miRemovePoint,
         new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_Separator")),
-        // TODO   this.miAnchor,
+        this.miAnchor,
         new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_Separator")),
-        // TODO   this.miMirror,
+        this.miMirror,
         new ToolStripMenuItem(QResources.GetGeneral("QShapePainterControl_ShapeMenu_Separator")),
         this.miFlipHorizontal,
         this.miFlipVertical,
