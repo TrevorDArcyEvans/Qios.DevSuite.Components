@@ -886,9 +886,6 @@ namespace Qios.DevSuite.Components
 
     Rectangle IQCompositeContainer.RectangleToScreen([In] Rectangle obj0) => this.RectangleToScreen(obj0);
 
-    [SpecialName]
-    Size IQCompositeContainer.get_Size() => this.Size;
-
     Point IQMouseHookClient.PointToClient([In] Point obj0) => this.PointToClient(obj0);
   }
 }
